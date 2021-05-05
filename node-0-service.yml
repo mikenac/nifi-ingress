@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: outside-0
+spec:
+  selector:
+    app: nginx
+    nifi-broker-id: "0"
+  ports:
+    - protocol: TCP
+      targetPort: 80
+      port: 32000
+      nodePort: 32000
+  type: NodePort

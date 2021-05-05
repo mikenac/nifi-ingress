@@ -1,0 +1,4 @@
+resources:
+ - config.yml
+ - headless_service.yml
+ - pods.yml

@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nifi-ingress
+spec:
+  rules:
+    - host: nifi-0.foobar.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: outside-0
+              servicePort: 32000
+    - host: nifi-1.foobar.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: outside-1
+              servicePort: 32001
+    - host: nifi-2.foobar.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: outside-2
+              servicePort: 32002
